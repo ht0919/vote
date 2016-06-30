@@ -22,7 +22,8 @@
       $pdo = null;
       echo "<p>あなたは $name に投票しました。</p>";
     } catch(PDOException $e) {
-      $res = $e->getMessage();
+      echo "<font color=\"red\">データベースを初期化して下さい</font>";
+      //echo $e->getMessage();
     }
   ?>
   <p><a href="index.php">戻る</a></p>

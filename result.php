@@ -20,6 +20,7 @@
     // データベースサーバーから切断
 		$pdo = null;
 	} catch(PDOException $e) {
-		$res = $e->getMessage();
+    echo "<font color=\"red\">データベースを初期化して下さい</font>";
+		//echo $e->getMessage();
 	}
 ?>

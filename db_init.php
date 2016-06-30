@@ -8,7 +8,8 @@
 <?php
 	$USER="root";
 	$PW="";
-	$dnsinfo="mysql:dbname=entry_db;host=localhost;charset=utf8";
+	// $dnsinfo="mysql:dbname=entry_db;host=localhost;charset=utf8";
+  $dnsinfo="mysql:host=localhost;charset=utf8";
 	try {
 		// データベースサーバーへの接続と文字コードの設定
 		$pdo = new PDO($dnsinfo, $USER, $PW);
@@ -24,10 +25,10 @@
 		$pdo->query("insert into entry_tbl values ('犬派',0),('猫派',0)");
 		// データベースサーバーから切断
 		$pdo = null;
+    echo "データベースを初期化しました。";
 	} catch(PDOException $e) {
-		$res = $e->getMessage();
+		echo $e->getMessage();
 	}
-	echo "データベースを初期化しました。";
 ?>
 <p><a href="index.php">戻る</a></p>
 </body>
